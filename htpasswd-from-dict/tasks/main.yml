@@ -1,0 +1,7 @@
+---
+- name: Create htpasswd file
+  htpasswd:
+    path: "{{ htpasswd_output_path }}"
+    name: "{{ item.username }}"
+    password: "{{ item.password }}"
+  loop: "{{ htpasswd_users }}"
