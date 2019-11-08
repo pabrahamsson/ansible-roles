@@ -1,4 +1,9 @@
 ---
+- name: Delete old htpasswd file (if it exist)
+  file:
+    path: "{{ htpasswd_output_path }}"
+    state: absent
+
 - name: Create htpasswd file
   htpasswd:
     path: "{{ htpasswd_output_path }}"
